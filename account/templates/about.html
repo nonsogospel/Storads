@@ -1,0 +1,290 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>What We Do - About Us | Storads</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<script src="https://kit.fontawesome.com/2ae6dcc1c6.js" crossorigin="anonymous"></script>
+     <!-- Favicon -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+
+    <link rel="stylesheet" href="{% static 'About/css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'About/css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'About/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'About/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'About/css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'About/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'About/css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'About/css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'About/css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'About/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'About/css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'About/css/style.css' %}">
+
+
+
+<!-- style for the preloader-->
+<style>
+
+  .spinner {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    position: absolute;
+    top: 48%;
+    left: 48%; 	 
+  
+    -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: sk-rotateplane 1.2s infinite ease-in-out;
+  }
+  
+  @-webkit-keyframes sk-rotateplane {
+    0% { -webkit-transform: perspective(120px) }
+    50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+    100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+  }
+  
+  @keyframes sk-rotateplane {
+    0% { 
+      transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+    } 50% { 
+      transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+      -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+    } 100% { 
+      transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+      -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    }
+  }
+  
+  .spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: orange;
+  z-index: 999999;
+  }
+   
+</style>
+
+
+
+  </head>
+  <body class="goto-here">
+    	<!--CSS Spinner-->
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        </div>    
+        <!-- THE CSS SPINNER ENDS HERE -->
+    <!-- END nav -->
+
+    <div class="hero-wrap hero-bread" style="background-color: rgb(0, 0, 0)">
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+          	<p class="breadcrumbs"><span class="mr-2"><a href="{% url 'home' %}" style="color:orange; font-family:Verdana; font-weight:400; font-size:16px">HOME</a></span> <span style="color:white">About</span></p><br />
+            <h1 class="mb-0 bread" style="color:white; font-size:45px; font-family:Cambria">About Us</h1>
+            <img src="{% static 'img/logo.png' %}"><br /><a class="navbar-brand ml-4 mr-4" href="#"><b style="color:white; font-family:gitchgitch; font-size:27px">Stor</b><b style="color:orange; font-family:gitchgitch; font-size:27px">ads</b></a>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb">
+			<div class="container">
+				<div class="row no-gutters ftco-services">
+          <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services p-4 py-md-5">
+              <div class="icon d-flex justify-content-center align-items-center mb-4">
+            		<span class="fa fa-sync-alt" style="color:orange"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Time is of Essence</h3>
+                <p>Time is money, don't waste it</p>
+              </div>
+            </div>    
+          </div>
+          <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services p-4 py-md-5">
+              <div class="icon d-flex justify-content-center align-items-center mb-4">
+            		<span class="fa fa-truck" style="color:orange"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Fast Service Delivery</h3>
+                <p>Your Needs are met at a faster pace so as your deliveries</p>
+              </div>
+            </div>    
+          </div>
+
+          <div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+            <div class="media block-6 services p-4 py-md-5">
+              <div class="icon d-flex justify-content-center align-items-center mb-4">
+            		<span class="fa fa-user-plus" aria-hidden="true" style="color:orange"></span>
+              </div>
+              <div class="media-body">
+                <h3 class="heading">Support Customer</h3>
+                <p>24/7 Reliable Customer Support System</p>
+              </div>
+            </div>    
+          </div>
+        
+			</div>
+		</section>
+
+    <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+						<!-- <a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center"> -->
+							<span class="icon-play"></span>
+						</a>
+					</div>
+					<div class="col-md-7 py-md-5 wrap-about pb-md-5 ftco-animate">
+	          <div class="heading-section-bold mb-4 mt-md-5">
+	          	<div class="ml-md-0">
+		            <h2 class="mb-4">About | STORADS</h2>
+	            </div>
+	          </div>
+	          <div class="pb-md-5 pb-4">
+							<p>Creativity in Advertisement.</p>
+              <p>Looking for where to advertise that services of yours? OR</p>
+              <p>Searching for a platform to tell others about what you sell and what you do?</p>
+              <p>Take that big step and try <i>Storads</i></p>
+              <p>Grow your business, sell yourself as a freelancer and stand out among competitors.</p>
+							<p><a href="{% url 'post-create' %}" class="btn btn-primary">Start Now</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+  
+    <section class="ftco-gallery">
+    	<div class="container">
+    		<div class="row justify-content-center">
+    			<div class="col-md-8 heading-section text-center mb-4 ftco-animate">
+            <h2 class="mb-4">Storads</h2>
+            <p>Advertise Right, Shop Right</p>
+          </div>
+    		</div>
+    	</div>
+    
+        </div>
+    	</div>
+    </section>
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+      	<div class="row">
+      		<div class="mouse">
+						<a href="#" class="mouse-icon">
+							<div class="mouse-wheel"><span class="fas fa-arrow-up"></span></div>
+						</a>
+					</div>
+      	</div>
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <p><img src="{% static 'img/logo.png' %}"></p>
+              <h2 class="ftco-heading-2">Storads</h2>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <!-- <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Menu</h2>
+              <ul class="list-unstyled">
+                <li><a href="{% url 'home' %}" class="py-2 d-block" alt="Storads">Home</a></li>
+                <li><a href="{% url 'users_list' %}" class="py-2 d-block" alt="Find Clients">Find Clients</a></li>
+                <li><a href="{% url 'friend_list' %}" class="py-2 d-block" alt="Your Clients">Your Clients</a></li>
+                <li><a href="{% url 'post-create' %}" class="py-2 d-block" alt="Sell Something Now on Storads">Sell Now</a></li>
+                <li><a href="{% url 'register' %}" class="py-2 d-block" alt="Rgister on Storads">Register</a></li>
+                <li><a href="{% url 'login' %}" class="py-2 d-block" alt="Login - Storads">Login</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Help</h2>
+              <div class="d-flex">
+	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
+	                <li><a href="{% url 'contact' %}" class="py-2 d-block" alt="Contact Us - Storads">Contact Us</a></li>
+	                <li><a href="{% url 'privacypolicy' %}" class="py-2 d-block" alt="Privacy Policy - Storads">Privacy Policy</a></li>
+	              </ul>
+	          
+	            </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Quick Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@storads.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved 
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+
+ 
+
+  <script src="{% static 'About/js/jquery.min.js' %}"></script>
+  <script src="{% static 'About/js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'About/js/popper.min.js' %}"></script>
+  <script src="{% static 'About/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'About/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'About/js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'About/js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'About/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'About/js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'About/js/aos.js' %}"></script>
+  <script src="{% static 'About/js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'About/js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'About/js/scrollax.min.js' %}"></script>
+  <script src="{% static 'About/js/main.js' %}"></script>
+
+
+  <!-- Template Javascript -->
+  <script src="{% static 'js/main.js' %}"></script>
+  <script>
+      $(document).ready(function() {
+      //Preloader
+      preloaderFadeOutTime = 500;
+      function hidePreloader() {
+      var preloader = $('.spinner-wrapper');
+      preloader.fadeOut(preloaderFadeOutTime);
+      }
+      hidePreloader();
+      });
+      </script>
+    
+  </body>
+</html>

@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+	
+<script src="https://kit.fontawesome.com/2ae6dcc1c6.js" crossorigin="anonymous"></script>
+
+<style>
+
+      .spinner {
+        width: 40px;
+        height: 40px;
+        background-color: white;
+        position: absolute;
+        top: 48%;
+        left: 48%; 	 
+      
+        -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+        animation: sk-rotateplane 1.2s infinite ease-in-out;
+      }
+      
+      @-webkit-keyframes sk-rotateplane {
+        0% { -webkit-transform: perspective(120px) }
+        50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+        100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+      }
+      
+      @keyframes sk-rotateplane {
+        0% { 
+          transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+          -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+        } 50% { 
+          transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+          -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+        } 100% { 
+          transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+          -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+        }
+      }
+      
+      .spinner-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: orange;
+      z-index: 999999;
+      }
+       
+</style>
+
+  <!-- Favicon -->
+  <link href="{% static 'img/favicon.png' %}" rel="icon">
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="{% static 'Real/css/bootstrap.min.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'Real/css/google_fonts.css' %}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'Real/css/dropdowncontent.css' %}"
+    />
+    {% block cssfiles %}{% endblock cssfiles %}
+
+  </head>
+  <body>
+    	<!--CSS Spinner-->
+      <div class="spinner-wrapper">
+        <div class="spinner"></div>
+        </div>    
+        <!-- THE CSS SPINNER ENDS HERE -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <a class="navbar-brand ml-4 mr-4" href="#"><b style="color:white; font-family:gitchgitch; font-size:27px">Stor</b><b style="color:orange; font-family:gitchgitch; font-size:27px">ads</b></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+               <a class="nav-item nav-link" href="{% url 'home' %}" style="font-family:Calibri; color:white; font-size:18px"><i class="fas fa-home"></i>Home</a>
+               <a class="nav-item nav-link" href="{% url 'about' %}" style="font-family:Calibri; color:white; font-size:18px"><i class="fa fa-id-card" aria-hidden="true"></i>About Us</a>
+          <a class="nav-item nav-link" href="{% url 'users_list' %}" style="font-family:Calibri; color:white; font-size:18px"
+            ><i class="fas fa-map-marker"></i>Add Clients</a
+          >
+          {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'friend_list' %}" style="font-family:Calibri; color:white; font-size:18px"
+            ><i class="fas fa-user-friends"></i>Your Clients</a
+          >
+          <a class="nav-item nav-link" href="{% url 'post-create' %}" style="font-family:Calibri; color:white; font-size:18px"
+            ><i class="fa fa-shopping-cart" aria-hidden="true"></i>Sell Now</a
+          >
+          
+          <a
+            class="nav-item nav-link btn btn-danger ml-4 text-light"
+            href="{% url 'logout' %}" style="font-family:Calibri; color:white; font-size:18px"
+            >Logout</a
+          ><a class="nav-item nav-link" href="{% url 'my_profile' %}" style="font-family:Calibri; color:white; font-size:18px"><i class="fas fa-user"></i>My Profile</a>
+          {% else %}
+          <a
+            class="nav-item nav-link btn btn-success ml-4 text-light"
+            href="{% url 'login' %}" style="font-family:Calibri; color:white; font-size:18px"
+            >Login</a
+          >
+          <a
+            class="nav-item nav-link btn btn-info ml-3 text-light"
+            href="{% url 'register' %} " style="font-family:Calibri; color:white; font-size:18px"
+            >Register</a
+          >
+          {% endif %} {% block searchform %}{% endblock searchform %}
+        </div>
+      </div><p style="color:rgb(201, 201, 201)">Welcome, {{user.username}}</p>
+    </nav>
+    <div class="container">{% block content %}{% endblock content %}</div>
+
+    <footer class="page-footer font-small black">
+      <div class="footer-copyright text-center py-3">
+        <a href="{% url 'contact' %}">Contact Us</a> || <a href="{% url 'privacypolicy' %}">Privacy Policy</a><br />
+        Storads © <script>document.write(new Date().getFullYear());</script> <br /><small class="text-muted"
+          >All rights reserved!</small
+        >
+        
+      </div>
+    </footer>
+
+    <!-- JS Files -->
+    <script src="{% static 'Real/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'Real/js/popper.min.js' %}"></script>
+    <script src="{% static 'Real/js/bootstrap.min.js' %}"></script>
+
+  <!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+<script>
+    $(document).ready(function() {
+    //Preloader
+    preloaderFadeOutTime = 500;
+    function hidePreloader() {
+    var preloader = $('.spinner-wrapper');
+    preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
+    });
+    </script>
+    {% block jsfiles %}{% endblock jsfiles %}
+  </body>
+</html>

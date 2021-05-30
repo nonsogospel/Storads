@@ -1,0 +1,39 @@
+{% extends "account/layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block cssfiles %}
+{% endblock cssfiles %}
+{% block searchform %}
+<form class="form-inline my-2 my-lg-0 ml-5" action="{% url 'search_posts' %}" method="get">
+  <input name="p" type="text" placeholder="Search posts..">
+  <button class="btn btn-success my-2 my-sm-0 ml-4" type="submit">Search</button>
+</form>
+{% endblock searchform %}
+{% block content %}
+<br><br>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center"><b>Start Selling</b></h5>
+            <form class="form-signin" method = "POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group"><br>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sell</button><br>
+            </div>
+        </form>
+        <p style="color:black">Name:<i style="color:green">Your Business / Brand Name</i></p>
+        <p style="color:black">Pic:<i style="color:green">An image or a picture of what you want to sell</i></p>
+        <p style="color:black">Tag:<i style="color:green">Item / Items you want to sell</i></p>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}
+{% block jsfiles %}{% endblock jsfiles %}

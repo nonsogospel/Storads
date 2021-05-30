@@ -1,0 +1,175 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+       <!-- Favicon -->
+       <link href="{% static 'img/favicon.png' %}" rel="icon">
+        <title>Contact Us | Storads</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{% static 'Contact/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'Contact/vendors/linericon/style.css' %}">
+        <link rel="stylesheet" href="{% static 'Contact/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'Contact/vendors/owl-carousel/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'Contact/vendors/lightbox/simpleLightbox.css' %}">
+        <link rel="stylesheet" href="{% static 'Contact/vendors/nice-select/css/nice-select.css' %}">
+        <link rel="stylesheet" href="{% static 'Contact/vendors/animate-css/animate.css' %}">
+        <!-- main css -->
+        <link rel="stylesheet" href="{% static 'Contact/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'Contact/css/responsive.css' %}">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+   
+        
+        <!--================Home Banner Area =================-->
+        <section class="banner_area">
+            <div class="banner_inner d-flex align-items-center" style="background-color:black">
+            	<div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+				<div class="container">
+					<div class="banner_content text-center">
+                        <div class="page_link">
+							<a href="{% url 'home' %}" style="color:orange; font-family:Verdana; font-size:18px">Home</a>
+							<a href="{% url 'contact' %}" style="color:white; font-family:Verdana; font-size:16px">CONTACT</a>
+						</div><br />
+                        <h1 class="mb-0 bread" style="color:white; font-size:45px; font-family:Cambria">Contact Us</h1><br />
+
+                        <img src="{% static 'img/logo.png' %}"><br /><a class="navbar-brand ml-4 mr-4" href="#"><b style="color:white; font-family:gitchgitch; font-size:27px">Stor</b><b style="color:orange; font-family:gitchgitch; font-size:27px">ads</b></a>
+					</div>
+				</div>
+            </div>
+        </section>
+        <!--================End Home Banner Area =================-->
+
+
+        <!--================Contact Area =================-->
+        <section class="contact_area p_120">
+
+    
+            <div class="container">
+                <div>
+                    {% for info in messages %}
+                   <h3 style="color:green"> <i class="fa fa-check" aria-hideen="true"></i> {{info}} </h3>
+                    {% endfor %}
+                </div>
+                <div id="mapBox" class="mapBox" 
+                    data-lat="40.701083" 
+                    data-lon="-74.1522848" 
+                    data-zoom="13" 
+                    data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
+                    data-mlat="40.701083"
+                    data-mlon="-74.1522848">
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="contact_info">
+                            <div class="info_item">
+                                <i class="lnr lnr-home"></i>
+                                <h6>Lagos, Nigeria</h6><br />
+                                
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-phone-handset"></i>
+                                <h6><a href="#">Use the Contact Form</a></h6>
+                                <p>Always Available</p>
+                            </div>
+                            <div class="info_item">
+                                <i class="lnr lnr-envelope"></i>
+                                <h6><a href="#">info@storads.com</a></h6>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <form class="row contact_form" action="contact_process" method="post" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email address">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Subject">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" id="message" rows="1" placeholder="Enter Message"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12 text-right">
+                                <button type="submit" value="submit" class="btn submit_btn">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--================Contact Area =================-->
+        
+        <!--================Footer Area =================-->
+  
+        <!--================End Footer Area =================-->
+        
+        <!--================Contact Success and Error message Area =================-->
+        <div id="success" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Thank you</h2>
+                        <p>Your message is successfully sent...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals error -->
+
+        <div id="error" class="modal modal-message fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fa fa-close"></i>
+                        </button>
+                        <h2>Sorry !</h2>
+                        <p> Something went wrong </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--================End Contact Success and Error message Area =================-->
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{% static 'Contact/js/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'Contact/js/popper.js' %}"></script>
+        <script src="{% static 'Contact/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'Contact/js/stellar.js' %}"></script>
+        <script src="{% static 'Contact/vendors/lightbox/simpleLightbox.min.js' %}"></script>
+        <script src="{% static 'Contact/vendors/nice-select/js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'Contact/vendors/isotope/imagesloaded.pkgd.min.js' %}"></script>
+        <script src="{% static 'Contact/vendors/isotope/isotope-min.js' %}"></script>
+        <script src="{% static 'Contact/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'Contact/js/jquery.ajaxchimp.min.js' %}"></script>
+        <script src="{% static 'Contact/js/mail-script.js' %}"></script>
+        <script src="{% static 'Contact/vendors/counter-up/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'Contact/vendors/counter-up/jquery.counterup.min.js' %}"></script>
+        <!-- contact js -->
+        <script src="js/jquery.form.js"></script>
+        <script src="{% static 'Contact/js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'Contact/js/contact.js' %}"></script>
+        <script src="{% static 'Contact/js/theme.js' %}"></script>
+    </body>
+</html>

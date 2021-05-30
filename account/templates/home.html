@@ -1,0 +1,353 @@
+{% extends "account/layout.html" %}
+{% load static %}
+{% block cssfiles %}
+{% endblock cssfiles %}
+{% block searchform %}
+<form class="form-inline my-2 my-lg-0 ml-5" action="{% url 'search_posts' %}" method="get">
+  <input name="p" type="text" placeholder="Search posts..">
+  <button class="btn btn-success my-2 my-sm-0 ml-4" type="submit">Search</button>
+</form>
+{% endblock searchform %}
+{% block content %}
+<title>Storads | Advertise Right, Shop Right</title>
+ 		<!-- STYLING FOR THE SHOP -->
+     <link href="{% static 'Shop/css/bootstrap.min.css' %}" rel="stylesheet">
+
+     <link href="{% static 'Shop/css/prettyPhoto.css' %}" rel="stylesheet">
+     <link href="{% static 'Shop/css/price-range.css' %}" rel="stylesheet">
+     <link href="{% static 'Shop/css/animate.css' %}" rel="stylesheet">
+     <link href="{% static 'Shop/css/main.css' %}" rel="stylesheet">
+     <link href="{% static 'Shop/css/responsive.css' %}" rel="stylesheet">
+     <!--[if lt IE 9]>
+     <script src="js/html5shiv.js"></script>
+     <script src="js/respond.min.js"></script>
+     <![endif]--> 
+
+<!-- STYLE GOTTEN FROM THE PREVIOUS HOMEPAGE INDEX PAGE-->
+<style>
+    body {
+        color: #353535;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400;
+    
+    }
+</style>
+
+<!-- IT ENDS HER#f3f6ffE-->
+
+<!-- STYLE FOR THE SCSROLL TO TOP BUTTON STARTS-->
+<style>
+    #myBtn3 {
+      display: none;
+      position: fixed;
+      bottom: 12px;
+      right: 10px;
+      z-index: 99;
+      font-size: 18px;
+      border: none;
+      outline: none;
+      background-color: white;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 4px;
+    }
+    
+    #myBtn3:hover {
+      background-color: black;
+    }
+    </style>
+
+<!-- IT ENDS HERE-->
+
+<!-- body of my page starts here-->
+<button onclick="topFunction()" id="myBtn3" title="Go to top"><img src="{% static 'img/arrow.png' %}" /></button>
+     
+            <!-- Main Slider Start -->
+            <section id="advertisement">
+              <div class="container">
+                  <img src="{% static 'Shop/images/shop/banner-advert.png' %}" alt="" />
+              </div>
+          </section>
+
+          <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                            <h2>Category</h2>
+                            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-plus-square" style="color:#FF8C00"></i><a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                <b style="font-family: 'Open Sans', sans-serif">New Arrivals</b>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="womens" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-plus-square" style="color:#FF8C00"></i>NEW ARRIVALS</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-tshirt" style="color:#FF8C00"></i><a data-toggle="collapse" data-parent="#accordian" href="#clothes">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                <b style="font-family: 'Open Sans', sans-serif">CLOTHES</b>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="clothes" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=men">Men</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=women">Women</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=children">Children</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                     
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-female" style="color:#FF8C00"></i><a data-toggle="collapse" data-parent="#accordian" href="#fashion">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                <b style="font-family: 'Open Sans', sans-serif">FASHION & BEAUTY</b>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="fashion" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=Bags%2C+Shoes%2C+Necklaces%2C+Belts">Bags, Shoes, Necklaces, Belts</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=makeup">Makeup Artist</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=Fashion+designing">Fashion Designing / Tailoring</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=Nails">Nails Fixing</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=Hair">Hair Styling</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-mobile-alt" style="color:#FF8C00"></i><a data-toggle="collapse" data-parent="#accordian" href="#gadgets">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                <b style="font-family: 'Open Sans', sans-serif">GADGETS & ACCESSORIES</b>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="gadgets" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=phones">Phones Repair/Sale</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=laptops">Laptops Repair/Sale</a></li>
+                                                <li><a href="http://127.0.0.1:8000/asearch_posts/?p=tv">Tv Repair/Sale</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=refrigerator">Refrigerator Repair/Sale</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=air+conditioner">Air Conditioner Repair/Sale</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=electronics">Other Electronics Repair/Sale</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-birthday-cake" style="color:#FF8C00"></i><a data-toggle="collapse" data-parent="#accordian" href="#catering">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                <b style="font-family: 'Open Sans', sans-serif">CATERING SERVICES</b>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="catering" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=cakes">Cakes</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=food">Cooked Food Delivery</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=snacks">Smallchops Delivery</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=restaurants">Restaurants</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=wine">Wine Shops</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title">
+                                            <i class="fa fa-music" style="color:#FF8C00"></i><a data-toggle="collapse" data-parent="#accordian" href="#music">
+                                                <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                                <b style="font-family: 'Open Sans', sans-serif">MUSIC SERVICES</b>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="music" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <ul>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=band">Band Performance</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=instrumentalist">Instrumentalist</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=singer">Vocalist, Singer</a></li>
+                                                <li><a href="http://127.0.0.1:8000/search_posts/?p=musical+instrument">Musical Instrument Repair / Sale</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                               <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h4 class="panel-title"><i class="fa fa-camera" aria-hidden="true" style="color:#FF8C00"> </i> <a href="http://127.0.0.1:8000/search_posts/?p=photography"><b style="font-family: 'Open Sans', sans-serif">Photography</b></a></h4>
+                                    </div>
+                                </div> 
+                            </div><!--/category-productsr-->
+                        
+    
+                            
+
+                            
+                            <div class="shipping text-center"><!--shipping-->
+                                <img src="{% static 'Shop/images/home/shipping.jpg' %}" alt="" />
+                            </div><!--/shipping-->
+                            
+                        </div>
+                    </div>
+
+
+          <div class="col-sm-9 padding-right">
+            <div class="features_items"><!--features_items-->
+                <h2 class="title text-center" style="color:white">POSTS</h2>
+
+   
+                
+  <!-- The real one starts here-->             
+ 	<div class="container">
+	    <div class="row">
+
+	      <div class="col-md-8">
+	        {% for post in posts %}
+	        <div class="card card-signin my-5">
+	          <div class="card-body">
+	          	<a href="{{ post.user_name.profile.get_absolute_url }}"><img src="{{ post.user_name.profile.image.url }}" class="rounded-circle" width="30" height="30" alt=""></a>
+	          	<a class="text-dark" href="{{ post.user_name.profile.get_absolute_url }}"><b>{{ post.user_name }}</b></a>
+	          	<br><small class="text-muted">Posted on {{ post.date_posted }}</small>
+	          	<br><br>
+	            <p class="card-text text-dark" style="color:orange; font-family:Comic Sans MS; text-transform:uppercase; text-align:center"><b>{{ post.name }}</b></p>
+	          </div>
+	          <div style="text-align:center"><a href="{% url 'post-detail' post.id %}"><img class="card-img-top" src="{{ post.pic.url }}" alt="" style="width:80%"></a></div>
+	          {% if post.tags %}
+	          <br>
+	          <p class="text-danger ml-3"><b>Tags: <i>{{ post.tags }}</i></b></p>
+	          {% endif %}
+	          <div class="card-footer">
+	          	<button class="btn btn-white mr-3 like" id="{{ post.id }}">
+			        {% if post in liked_post %}
+			            <a href="{% url 'post-like' %}" style="color:red;" id="likebtn{{ post.id }}"> Unlike</a> | {{post.likes.count}}
+			        {% else %}
+			            <a href="{% url 'post-like' %}" style="color:green;" id="likebtn{{ post.id }}"> Like</a> | {{post.likes.count}}
+			        {% endif %}
+			    </button>
+	          	<a class="btn btn-outline-info" href="{% url 'post-detail' post.id %}">Comments | {{ post.details.count }}</a>
+	          </div>
+	        </div>
+	        {% endfor %}
+	  	   </div>
+	    </div>
+	</div>
+
+{% if is_paginated %}
+
+      {% if page_obj.has_previous %}
+        <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      {% for num in page_obj.paginator.page_range %}
+        {% if page_obj.number == num %}
+          <a class="btn btn-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+          <a class="btn btn-outline-info mb-4" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+      {% endfor %}
+
+      {% if page_obj.has_next %}
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.paginator.num_pages }}">Last</a>
+
+        <!-- The copy pasted div tag ends here-->
+      </div><!--features_items-->
+    </div>
+</div>
+</div>
+</section>
+      {% endif %}
+
+    {% endif %}
+
+{% endblock content %}
+
+{% block jsfiles %}
+<script>
+	$(".like").click(function (e) {
+    var id = this.id;
+    var href = $('.like').find('a').attr('href');
+    e.preventDefault();
+
+    $.ajax({
+        url: href,
+        data: {
+          'likeId': id
+        },
+        success: function(response){
+          if(response.liked){
+            $('#likebtn' + id).html("Unlike");
+            $('#likebtn' + id).css("color", "red")
+          }
+          else{
+            $('#likebtn' + id).html("Like");
+            $('#likebtn' + id).css("color", "green")
+          }
+        }
+      })
+});
+</script>
+
+   <!--SCRIPT FOR THE SCROLL TO TOP BUTTON-->
+   <script>
+    //Get the button
+    var mybutton = document.getElementById("myBtn3");
+    
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+    
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+    
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+    </script>
+    <!-- IT ENDS HERE-->
+
+
+{% endblock jsfiles %}
